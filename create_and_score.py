@@ -63,7 +63,7 @@ def parse_data(data_doc, query_doc):
     
     return data_dictionary, query_dictionary
 
-def sort_data_to_generated_topcis(data_dictionary, vectorizer, predicted_topics):
+def sort_data_to_generated_topics(data_dictionary, vectorizer, predicted_topics):
     #Now we have to sort our data into the trained topics
     data_topic_dictionary = {}
     if args.debug:
@@ -104,7 +104,7 @@ def score_search_queries_and_save(query_dictionary, data_topic_dictionary, vecto
             for document in possible_documents:
                 distance = pairwise_distances(tfst, document['value']).tolist()[0][0]
                 documents_with_distance[document['key']] = distance
-            ordered_doc = sorted(documents_with_distance.items(), key=lambda x: x[1], reverse=True)
+            ordered_doc = sorted(documents_with_distance.items(), key=lambda x: x[1])
 
             for index, od in enumerate(ordered_doc):
                 writer.writerow([query_id,'Q0', od[0], index+1, od[1], groupname])
@@ -184,7 +184,7 @@ def main(argv):
     print('Finished training')
     print('---------------------------------------------------')
     print('Sorting data in trained structure')
-    data_topic_dictionary = sort_data_to_generated_topcis(data_dictionary, vectorizer, predicted_topics)
+    data_topic_dictionary = sort_data_to_generated_topics(data_dictionary, vectorizer, predicted_topics)
     print('Finished sorting')
     print('---------------------------------------------------')
     print('Executing all search queries and saving as ' + args.file + '.trac_eval')
