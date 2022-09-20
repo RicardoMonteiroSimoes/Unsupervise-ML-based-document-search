@@ -1,7 +1,5 @@
 # IE1-SKB
 
-### Gruppe kabasbet monteric 
-
 ## Konzept
 Die Idee ist es mittels Algorithmen aus dem Bereich des MLs die Suche zu vollziehen. Unter anderem gäbe es als Beispiel das Tf-Idf Mass sowie aus dem Unsupervised learning die automatische Gruppierung ähnlicher Texte. Da wir bereits KI1+2 an der ZHAW hatten, können wir das erlernte mittels diesem Forschungsexperiment in die Praxis umzusetzen. Als Programmiersprachen würde Python genommen und diverse Libraries (skcikit-learn, tensorflow, pytorch)
 
