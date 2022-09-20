@@ -91,7 +91,7 @@ def score_search_queries_and_save(query_dictionary, data_topic_dictionary, vecto
             print('FileWriter is open and ready to write')
 
         #write header of the document
-        writer.writerow(['QueryID', 'Iteration', 'Dok.Nummer', 'Rang', 'Score', 'System'])
+        #writer.writerow(['QueryID', 'Iteration', 'Dok.Nummer', 'Rang', 'Score', 'System'])
         
         if args.debug:
             print('Looping through each query')
